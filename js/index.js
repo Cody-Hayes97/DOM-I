@@ -46,50 +46,57 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-let navigation = document.querySelectorAll("nav");
-navigation.forEach(navItem => {
-  navItem.append(siteContent["nav"]["nav-item-1"]);
-  navItem.append(siteContent["nav"]["nav-item-2"]);
-  navItem.append(siteContent["nav"]["nav-item-3"]);
-  navItem.append(siteContent["nav"]["nav-item-4"]);
-  navItem.append(siteContent["nav"]["nav-item-5"]);
-  navItem.append(siteContent["nav"]["nav-item-6"]);
-  navItem.prepend(siteContent["nav"]["nav-item-2"]);
+let navigation = document.querySelectorAll("a");
 
-  navItem.style.display = "flex";
-  navItem.style.width = "610px";
-  navItem.style.justifyContent = "space-between";
-  navItem.style.color = "green";
-});
+navigation[0].textContent = siteContent["nav"]["nav-item-1"];
+navigation[1].textContent = siteContent["nav"]["nav-item-2"];
+navigation[2].textContent = siteContent["nav"]["nav-item-3"];
+navigation[3].textContent = siteContent["nav"]["nav-item-4"];
+navigation[4].textContent = siteContent["nav"]["nav-item-5"];
+navigation[5].textContent = siteContent["nav"]["nav-item-6"];
 
-let head = document.querySelector("h1").append(siteContent["cta"]["h1"]);
+// navItem.style.display = "flex";
+// navItem.style.width = "610px";
+// navItem.style.justifyContent = "space-between";
+// navItem.style.color = "green";
+
+let head = document.querySelector("h1");
+head.textContent = siteContent["cta"]["h1"];
 
 let btn = document.querySelector("button").append(siteContent["cta"]["button"]);
 let ctaImg = document
   .getElementById("cta-img")
   .setAttribute("src", siteContent["cta"]["img-src"]);
 
-let headerFours = document.querySelector(".text-content > h4");
+let headerFours = document.querySelectorAll("h4");
 
-headerFours.append(siteContent["main-content"]["features-h4"]);
-
-let features = document.querySelectorAll(".text-content > p ");
-features.forEach(section => {
-  section.append(siteContent["main-content"]["features-content"]);
-});
+headerFours[0].textContent = siteContent["main-content"]["features-h4"];
+headerFours[1].textContent = siteContent["main-content"]["about-h4"];
+headerFours[2].textContent = siteContent["main-content"]["services-h4"];
+headerFours[3].textContent = siteContent["main-content"]["product-h4"];
+headerFours[4].textContent = siteContent["main-content"]["vision-h4"];
+headerFours[5].textContent = siteContent["contact"]["contact-h4"];
 
 let midImg = document.getElementById("middle-img");
 midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-let contactHead = document.querySelector(".contact > h4");
-contactHead.append(siteContent["contact"]["contact-h4"]);
+let paras = document.querySelectorAll("p");
+paras[0].textContent = siteContent["main-content"]["features-content"];
+paras[1].textContent = siteContent["main-content"]["about-content"];
+paras[2].textContent = siteContent["main-content"]["services-content"];
+paras[3].textContent = siteContent["main-content"]["product-content"];
+paras[4].textContent = siteContent["main-content"]["vision-content"];
+paras[5].textContent = siteContent["contact"]["address"];
+paras[6].textContent = siteContent["contact"]["phone"];
+paras[7].textContent = siteContent["contact"]["email"];
+paras[8].textContent = siteContent["footer"]["copyright"];
 
-let contactAdd = document.querySelector(".contact > p");
-contactAdd.append(siteContent["contact"]["address"]);
-contactAdd.append(siteContent["contact"]["phone"]);
-contactAdd.append(siteContent["contact"]["email"]);
-contactAdd.style.display = "flex";
-contactAdd.style.flexDirection = "column";
+// let contactHead = document.querySelector(".contact > h4");
+// contactHead.append(siteContent["contact"]["contact-h4"]);
 
-let foot = document.querySelector("footer > p");
-foot.append(siteContent["footer"]["copyright"]);
+// let contactAdd = document.querySelectorAll(".contact > p");
+// contactAdd[0].textContent = siteContent["contact"]["address"];
+// contactAdd[1].textContent = siteContent["contact"]["phone"];
+// contactAdd[2].textContent = siteContent["contact"]["email"];
+// contactAdd.style.display = "flex";
+// contactAdd.style.flexDirection = "column";

@@ -6,12 +6,12 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "img-src": "img/logo.png"
+    "img-src": "img/logo.png",
   },
   cta: {
     h1: "DOM Is Awesome",
     button: "Get Started",
-    "img-src": "img/header-img.png"
+    "img-src": "img/header-img.png",
   },
   "main-content": {
     "features-h4": "Features",
@@ -29,24 +29,26 @@ const siteContent = {
       "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "vision-h4": "Vision",
     "vision-content":
-      "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+      "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   contact: {
     "contact-h4": "Contact",
     address: "123 Way 456 Street Somewhere, USA",
     phone: "1 (888) 888-8888",
-    email: "sales@greatidea.io"
+    email: "sales@greatidea.io",
   },
   footer: {
-    copyright: "Copyright Great Idea! 2018"
-  }
+    copyright: "Copyright Great Idea! 2018",
+  },
 };
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-let navigation = document.querySelectorAll("a");
+////////////////////////////////////
+
+let navigation = document.querySelectorAll("nav a");
 
 navigation[0].textContent = siteContent["nav"]["nav-item-1"];
 navigation[1].textContent = siteContent["nav"]["nav-item-2"];
@@ -54,6 +56,16 @@ navigation[2].textContent = siteContent["nav"]["nav-item-3"];
 navigation[3].textContent = siteContent["nav"]["nav-item-4"];
 navigation[4].textContent = siteContent["nav"]["nav-item-5"];
 navigation[5].textContent = siteContent["nav"]["nav-item-6"];
+
+let newItem = document.createElement("a");
+newItem.textContent = "Explore";
+
+let newItemTwo = document.createElement("a");
+newItemTwo.textContent = "Search";
+
+let parent = document.querySelector("nav");
+parent.appendChild(newItem);
+parent.prepend(newItemTwo);
 
 // navItem.style.display = "flex";
 // navItem.style.width = "610px";
@@ -91,12 +103,5 @@ paras[6].textContent = siteContent["contact"]["phone"];
 paras[7].textContent = siteContent["contact"]["email"];
 paras[8].textContent = siteContent["footer"]["copyright"];
 
-// let contactHead = document.querySelector(".contact > h4");
-// contactHead.append(siteContent["contact"]["contact-h4"]);
-
-// let contactAdd = document.querySelectorAll(".contact > p");
-// contactAdd[0].textContent = siteContent["contact"]["address"];
-// contactAdd[1].textContent = siteContent["contact"]["phone"];
-// contactAdd[2].textContent = siteContent["contact"]["email"];
-// contactAdd.style.display = "flex";
-// contactAdd.style.flexDirection = "column";
+const navGreen = document.querySelectorAll("a");
+navGreen.forEach((coloring) => (coloring.style.color = "green"));
